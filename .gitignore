@@ -1,0 +1,9 @@
+**.rtl
+#**.xdc
+*.runs
+*.gen
+**.dcp
+*.sim
+*ip_user_files
+*.hw
+*.cache
