@@ -42,6 +42,7 @@ ARCHITECTURE Behavioral OF jerarquico IS
 
     COMPONENT div_frec
         PORT (
+            enable : IN STD_LOGIC;
             clk : IN STD_LOGIC;
             reset : IN STD_LOGIC;
             sat : OUT STD_LOGIC
@@ -79,7 +80,6 @@ ARCHITECTURE Behavioral OF jerarquico IS
     END COMPONENT;
     SIGNAL din : STD_LOGIC_VECTOR(7 DOWNTO 0);
     SIGNAL dir : STD_LOGIC_VECTOR(4 DOWNTO 0);
-    SIGNAL enable : STD_LOGIC;
     SIGNAL TXi : STD_LOGIC;
     SIGNAL saturacion : STD_LOGIC;
     SIGNAL sendint : STD_LOGIC;
@@ -93,6 +93,7 @@ BEGIN
     );
     dfu : div_frec
     PORT MAP(
+        enable => sendint,
         clk => clk,
         reset => reset,
         sat => clkwr
